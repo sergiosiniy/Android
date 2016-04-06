@@ -133,11 +133,11 @@ public class MainActivity extends AppCompatActivity {
         personName=((EditText)findViewById(R.id.name_input)).getText().toString();
     }
 
-    public void setTextNull(View v){
+    /*public void setTextNull(View v){
         EditText ed = (EditText)findViewById(R.id.name_input);
         ed.setText("");
         ed.setCursorVisible(true);
-    }
+    }*/
 
 
 }
