@@ -11,7 +11,8 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Map<Integer, Integer> items = new HashMap<>();
+    private Map<String, Integer> itemPrices = new HashMap<>();
+    private Map<String, Integer> itemWeights = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,24 +20,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-
     /**
-     * Calculates items when submit button is pressed.
+     * Calculates items.
      *
      * @return list of strings with item(s) which meets the conditions
      */
     private ArrayList<String> calculateItems(){
         ArrayList<String> list = new ArrayList<>();
-        list.add("Hello");
-        list.add("test");
-        list.add("item");
-        list.add("Hello");
-        list.add("test");
-        list.add("item");
-        list.add("Hello");
-        list.add("test");
-        list.add("item");
+
         return list;
+    }
+
+    /**
+     * Gets the values from all EditViews and puts it to the lists.
+     *
+     */
+    private void collectTheEntries(){
+        
     }
 
     /**
@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submitItems(View view){
+
         displayItems(calculateItems());
     }
 
