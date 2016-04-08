@@ -92,23 +92,20 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Calculates the price of the order.
      *
-     * @param quantity is the number of cups of coffee ordered
+     * @param cream if whippedCream is added contains true
+     * @param chocolate if chocolate is added contains true
      */
-    private int calculatePrice(int quantity, int priceOfOne, boolean cream, boolean chocolate) {
+    private int calculatePrice(boolean cream, boolean chocolate) {
 
-       if((cream||chocolate)){
            if(cream&&chocolate) {
-               return quantity * (priceOfOne+ chocolatePrice+wippedCreamPrice);
+               return quantity * (priceOfCup+ chocolatePrice+wippedCreamPrice);
            }else if(chocolate){
-               return quantity * (priceOfOne+ chocolatePrice);
+               return quantity * (priceOfCup+ chocolatePrice);
            }else if(cream){
-               return quantity * (priceOfOne+ wippedCreamPrice);
+               return quantity * (priceOfCup+ wippedCreamPrice);
            }else{
-               return 0;
+               return quantity * priceOfCup;
            }
-       }else{
-           return quantity * priceOfOne;
-       }
 
     }
 
@@ -125,19 +122,13 @@ public class MainActivity extends AppCompatActivity {
         nameInput();
         return "Name: "+ personName +
                 "\nQuantity: "+numOfCoffees+
-                "\nTotal: $"+calculatePrice(quantity, priceOfCup, wippedCream.isChecked(), chocolate.isChecked());
+                "\nTotal: $"+calculatePrice(wippedCream.isChecked(), chocolate.isChecked());
     }
 
 
     private void nameInput(){
         personName=((EditText)findViewById(R.id.name_input)).getText().toString();
     }
-
-    /*public void setTextNull(View v){
-        EditText ed = (EditText)findViewById(R.id.name_input);
-        ed.setText("");
-        ed.setCursorVisible(true);
-    }*/
 
 
 }
