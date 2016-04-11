@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Just Java</string>
+    <string name="name_input">Ваше имя</string>
+    <string name="toppings">наполнители</string>
+    <string name="chbox_whipped_cream">Взбитые сливки</string>
+    <string name="chbox_chocolate">Шоколад</string>
+    <string name="quantity">количество</string>
+    <string name="order_button">заказать</string>
+    <string name="toast_1_coffee">Минимальный заказ 1 кофе</string>
+    <string name="toast_100_coffee">Максимальный заказ 100 кофе</string>
+    <string name="toast_no_app">Нет соответствующего приложения</string>
+    <string name="form_order_name">Заказ от:\u0020</string>
+    <string name="form_order_quantity">\nКолчество:\u0020</string>
+    <string name="form_order_price">\nСчет: руб.:\u0020</string>
+</resources>

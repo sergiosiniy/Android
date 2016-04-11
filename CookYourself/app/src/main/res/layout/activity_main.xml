@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ScrollStyle">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context="ua.kiev.home.sergiosiniy.cookyourself.Main">
+
+        <ImageView
+            style="@style/ImageStyle"
+            android:src="@drawable/cooking_time"/>
+
+        <Button
+            style="@style/ButtonStyle"
+            android:text="@string/ready_recipes"
+            android:onClick="openRecipes"/>
+        <Button
+            style="@style/ButtonStyle"
+            android:text="@string/favorite_recipes"
+            android:onClick="openFavorites"/>
+        <Button
+            style="@style/ButtonStyle"
+            android:text="@string/add_new_recipe"
+            android:onClick="addNewRecipe"/>
+        <Button
+            style="@style/ButtonStyle"
+            android:text="@string/exit_button"
+            android:onClick="exit"/>
+    </LinearLayout>
+
+</ScrollView>
+
+

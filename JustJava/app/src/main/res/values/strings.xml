@@ -1,3 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Just Java</string>
+    <string name="name_input">Your name</string>
+    <string name="toppings">toppings</string>
+    <string name="chbox_whipped_cream">Whipped cream</string>
+    <string name="chbox_chocolate">Chocolate</string>
+    <string name="quantity">quantity</string>
+    <string name="order_button">order</string>
+    <string name="toast_1_coffee">You can not order less than 1 coffee</string>
+    <string name="toast_100_coffee">You can not order more than 100 coffees</string>
+    <string name="toast_no_app">You dont have an app to perform this action</string>
+    <string name="form_order_name">Order from:\u0020</string>
+    <string name="form_order_quantity">\nQuantity\u0020</string>
+    <string name="form_order_price">\nTotal: $\u0020</string>
 </resources>
