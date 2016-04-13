@@ -15,10 +15,10 @@ public class Main extends AppCompatActivity {
     }
 
     public void openRecipes(View view){
-        createActivityRecipes();
+        createActivityJustCookIt();
     }
 
-    private void createActivityRecipes(){
+    private void createActivityJustCookIt(){
         Intent recipes = new Intent(this,ReadyForCook.class);
         startActivity(recipes);
     }

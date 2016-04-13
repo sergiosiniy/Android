@@ -1,20 +1,21 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">#fff8e1</item>
+        <item name="colorPrimaryDark">#ffe082</item>
+        <item name="colorAccent">#76ff03</item>
+        <item name="android:colorButtonNormal">#fff8e1</item>
     </style>
 
     <style name="ScrollStyle">
-        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
 
     </style>
 
-    <style name="ImageStyle">
+    <style name="MainImageStyle">
         <item name="android:layout_height">0dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:scaleType">fitXY</item>
@@ -22,15 +23,23 @@
         <item name="android:layout_margin">8dp</item>
         <item name="android:layout_weight">3</item>
     </style>
+
+    <style name="BackGroundImgStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:scaleType">centerCrop</item>
+
+    </style>
     <style name="ButtonStyle">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">72dp</item>
+        <item name="android:layout_height">56dp</item>
         <!--<item name="android:layout_weight">1</item>-->
         <item name="android:layout_margin">1dp</item>
         <item name="android:textSize">24sp</item>
     </style>
     <style name="HeaderStyle">
         <item name="android:padding">4dp</item>
+        <item name="android:background">@android:color/white</item>
         <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAllCaps">true</item>

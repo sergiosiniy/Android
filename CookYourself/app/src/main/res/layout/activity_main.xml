@@ -1,37 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/ScrollStyle">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ua.kiev.home.sergiosiniy.cookyourself.Main">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        tools:context="ua.kiev.home.sergiosiniy.cookyourself.Main">
 
-        <ImageView
-            style="@style/ImageStyle"
-            android:src="@drawable/cooking_time"/>
+    <ImageView
+        style="@style/BackGroundImgStyle"
+        android:src="@drawable/background_main" />
 
-        <Button
-            style="@style/ButtonStyle"
-            android:text="@string/ready_recipes"
-            android:onClick="openRecipes"/>
-        <Button
-            style="@style/ButtonStyle"
-            android:text="@string/favorite_recipes"
-            android:onClick="openFavorites"/>
-        <Button
-            style="@style/ButtonStyle"
-            android:text="@string/add_new_recipe"
-            android:onClick="addNewRecipe"/>
-        <Button
-            style="@style/ButtonStyle"
-            android:text="@string/exit_button"
-            android:onClick="exit"/>
-    </LinearLayout>
+    <ScrollView style="@style/ScrollStyle">
 
-</ScrollView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/MainImageStyle"
+                android:src="@drawable/cooking_time" />
+
+            <Button
+                style="@style/ButtonStyle"
+                android:onClick="openRecipes"
+                android:text="@string/ready_recipes" />
+
+            <Button
+                style="@style/ButtonStyle"
+                android:onClick="openFavorites"
+                android:text="@string/favorite_recipes" />
+
+            <Button
+                style="@style/ButtonStyle"
+                android:onClick="addNewRecipe"
+                android:text="@string/add_new_recipe" />
+
+            <Button
+                style="@style/ButtonStyle"
+                android:onClick="exit"
+                android:text="@string/exit_button" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
+
+
 
 

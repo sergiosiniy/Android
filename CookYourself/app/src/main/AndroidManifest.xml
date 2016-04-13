@@ -15,7 +15,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ReadyForCook"></activity>
+        <activity
+            android:name=".ReadyForCook"
+            android:label="@string/title_activity_ready_for_cook"
+            android:parentActivityName=".Main">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ua.kiev.home.sergiosiniy.cookyourself.Main" />
+        </activity>
+        <activity android:name=".Recipe"
+            android:label="@string/title_activity_recipe"
+            android:parentActivityName=".ReadyForCook">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ua.kiev.home.sergiosiniy.cookyourself.ReadyForCook" />
+
+        </activity>
     </application>
 
 </manifest>
