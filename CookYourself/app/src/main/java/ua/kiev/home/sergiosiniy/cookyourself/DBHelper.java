@@ -15,7 +15,8 @@ public class DBHelper extends SQLiteOpenHelper {
                 +"(id integer primary key autoincrement,"
                 + "recipe_name varchar(50) not null,"
                 + "recipe_text text not null,"
-                + "recipe_img blob);";
+                + "recipe_img blob,"
+                + "recipe_background_img blob not null);";
 
     public DBHelper(Context context) {
         // конструктор суперкласса
