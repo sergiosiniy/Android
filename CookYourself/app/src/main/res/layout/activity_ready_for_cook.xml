@@ -6,9 +6,12 @@
     android:layout_height="match_parent">
 
 
+
     <ImageView
         style="@style/BackGroundImgStyle"
         android:src="@drawable/background_justcook" />
+
+
 
     <ScrollView style="@style/ScrollStyle">
 
@@ -18,6 +21,12 @@
             android:orientation="vertical"
             tools:context="ua.kiev.home.sergiosiniy.cookyourself.ReadyForCook">
 
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:padding="1dp"
+                android:hint="Search recipe"/>
 
 
             <Button

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Cook It Yourself</string>
+    <string name="app_name">Crazy Cook</string>
     <string name="title_activity_ready_for_cook">Just cook it</string>
     <string name="title_activity_recipe">Recipe</string>
     <string name="ready_recipes">Just cook it</string>

@@ -44,5 +44,6 @@
         android:layout_height="wrap_content"
         android:text="send"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"/>
+        android:layout_alignParentRight="true"
+        android:onClick=""/>
 </RelativeLayout>
