@@ -3,10 +3,22 @@
     <string name="find_beer">Find Beer!</string>
     <string name="brands"></string>
     <string-array name="beer_colors">
-        <item>light</item>
-        <item>amber</item>
-        <item>brown</item>
-        <item>dark</item>
+        <item>Light Lager</item>
+        <item>Pilsner</item>
+        <item>European amber lager</item>
+        <item>Dark Lager</item>
+        <item>Bock</item>
+        <item>Rauch Lager</item>
+        <item>Draft(Draught) Lager</item>
+        <item>Wheat beer</item>
+        <item>Lambic</item>
+        <item>Ale</item>
+        <item>Bitter Ale</item>
+        <item>Porter Ale</item>
+        <item>Stout Ale</item>
+        <item>Barley Wine Ale</item>
+
     </string-array>
+    <string name="choose_beer">Choose your beer type</string>
 
 </resources>
