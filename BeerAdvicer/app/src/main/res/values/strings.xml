@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">Beer Advicer</string>
     <string name="find_beer">Find Beer!</string>
-    <string name="brands"></string>
-    <string-array name="beer_colors">
+    <string name="title_activity_find_beer">Find Beer</string>
+    <string name="brands">Known brands of beer</string>
+    <string-array name="beer_types">
         <item>Light Lager</item>
         <item>Pilsner</item>
         <item>European amber lager</item>
@@ -17,7 +18,6 @@
         <item>Porter Ale</item>
         <item>Stout Ale</item>
         <item>Barley Wine Ale</item>
-
     </string-array>
     <string name="choose_beer">Choose your beer type</string>
 

@@ -26,4 +26,5 @@ public class FindBeerActivity extends AppCompatActivity {
         TextView beerType = (TextView) findViewById(R.id.brands);
         beerType.setText(sb);
     }
+
 }

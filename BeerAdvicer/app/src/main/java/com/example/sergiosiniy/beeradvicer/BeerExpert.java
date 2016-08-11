@@ -9,7 +9,7 @@ import java.util.List;
 public class BeerExpert {
     List<String> getBrands(String beerColor){
         List<String> listOfBrands = new ArrayList<String>();
-        switch(beerColor){
+        switch(beerColor.toLowerCase()){
             case "light":
                 listOfBrands.add("Черниговское светлое");
                 listOfBrands.add("Перша приватна броварня Лагер");
