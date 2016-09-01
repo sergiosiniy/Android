@@ -17,14 +17,14 @@ public class FindBeerActivity extends AppCompatActivity {
     public void onClickFindBeer(View view){
         BeerExpert beerExpert=new BeerExpert();
         StringBuffer sb = new StringBuffer();
-        Spinner color = (Spinner) findViewById(R.id.color);
+        Spinner beerType = (Spinner) findViewById(R.id.beer_type);
 
-        for(String brand:beerExpert.getBrands(String.valueOf(color.getSelectedItem()))){
+        for(String brand:beerExpert.getBrands(String.valueOf(beerType.getSelectedItem()))){
             sb.append(brand+"\n");
         }
 
-        TextView beerType = (TextView) findViewById(R.id.brands);
-        beerType.setText(sb);
+        TextView beerBrands = (TextView) findViewById(R.id.brands);
+        beerBrands.setText(sb);
     }
 
 }

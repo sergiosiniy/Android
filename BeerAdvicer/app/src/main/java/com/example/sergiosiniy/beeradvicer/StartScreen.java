@@ -13,8 +13,17 @@ public class StartScreen extends AppCompatActivity {
         setContentView(R.layout.activity_start_screen);
     }
 
-    public void openFindBeerActivity(View view){
+    public void findBeer(View view){
         Intent findBeer = new Intent(this, FindBeerActivity.class);
         startActivity(findBeer);
+    }
+
+    public void addNewBeer(View view){
+        Intent addBeer = new Intent(this, AddNewBeer.class);
+        startActivity(addBeer);
+    }
+
+    public void closeTheApp(View view){
+        System.exit(1);
     }
 }

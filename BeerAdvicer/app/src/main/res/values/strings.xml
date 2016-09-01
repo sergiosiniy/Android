@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">Beer Advicer</string>
-    <string name="find_beer">Find Beer!</string>
+    <string name="find_beer_button">Find your Beer!</string>
+    <string name="choose_beer_text">Choose beer type:</string>
     <string name="title_activity_find_beer">Find Beer</string>
-    <string name="brands">Known brands of beer</string>
-    <string-array name="beer_types">
+    <string name="title_activity_add_beer">Add Your Beer</string>
+    <string name="brands_text">Known brands of beer:</string>
+    <string name="brands_button">Brands</string>
+    <string-array name="beer_types_spinner">
         <item>Light Lager</item>
         <item>Pilsner</item>
         <item>European amber lager</item>
@@ -19,6 +22,16 @@
         <item>Stout Ale</item>
         <item>Barley Wine Ale</item>
     </string-array>
-    <string name="choose_beer">Choose your beer type</string>
+
+    <string name="close_app_button">Quit</string>
+    <string name="add_new_beer_button">Add Beer</string>
+    <string name="beer_type_hint">Enter beer type</string>
+    <string name="brand_hint">Enter the brand</string>
+    <string name="send_beer_button">Send beer</string>
+    <string name="send_beer_text">
+        Hello! \nYou can send us your beer.
+        And we\'ll add it to our database if it\'s Ok.
+        \nJust use the form below.
+    </string>
 
 </resources>

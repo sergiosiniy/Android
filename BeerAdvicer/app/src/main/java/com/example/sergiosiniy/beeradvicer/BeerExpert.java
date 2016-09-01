@@ -10,7 +10,7 @@ public class BeerExpert {
     List<String> getBrands(String beerColor){
         List<String> listOfBrands = new ArrayList<String>();
         switch(beerColor.toLowerCase()){
-            case "light":
+            case "light lager":
                 listOfBrands.add("Черниговское светлое");
                 listOfBrands.add("Перша приватна броварня Лагер");
                 listOfBrands.add("Микулин Лагер");
@@ -19,6 +19,8 @@ public class BeerExpert {
                 listOfBrands.add("Оболонь премиум");
                 listOfBrands.add("Сармат светлое");
                 listOfBrands.add("Славутич светлое");
+
+
                 break;
             case "dark":
                 listOfBrands.add("Tuborg Black");
