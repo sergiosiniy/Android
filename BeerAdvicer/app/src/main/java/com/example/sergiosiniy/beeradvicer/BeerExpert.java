@@ -7,9 +7,14 @@ import java.util.List;
  * Created by helpdeskss on 22.07.2016.
  */
 public class BeerExpert {
-    List<String> getBrands(String beerColor){
+    /**
+     * Used as beer DB for a while.
+     * @param beerType
+     * @return
+     */
+    List<String> getBrands(String beerType){
         List<String> listOfBrands = new ArrayList<String>();
-        switch(beerColor.toLowerCase()){
+        switch(beerType.toLowerCase()){
             case "light lager":
                 listOfBrands.add("Черниговское светлое");
                 listOfBrands.add("Перша приватна броварня Лагер");

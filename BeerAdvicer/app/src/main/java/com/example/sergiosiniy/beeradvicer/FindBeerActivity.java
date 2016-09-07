@@ -14,6 +14,11 @@ public class FindBeerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_find_beer);
     }
 
+    /**
+     * Gets beer from DB on button click
+     * Doesn't works for now, since there is no DB for a while :)
+     * @param view
+     */
     public void onClickFindBeer(View view){
         BeerExpert beerExpert=new BeerExpert();
         StringBuffer sb = new StringBuffer();
