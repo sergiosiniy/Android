@@ -10,6 +10,7 @@ public class StopwatchActivity extends AppCompatActivity {
 
     private int seconds = 0;
     private boolean running=false;
+    private boolean wasRunning=running;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +19,7 @@ public class StopwatchActivity extends AppCompatActivity {
         if (savedInstanceState != null) {
             seconds = savedInstanceState.getInt("seconds");
             running = savedInstanceState.getBoolean("running");
+            wasRunning=savedInstanceState.getBoolean("wasRunning");
         }
         runTimer();
     }
@@ -25,6 +27,20 @@ public class StopwatchActivity extends AppCompatActivity {
     public void onSaveInstanceState(Bundle savedInstanceState) {
         savedInstanceState.putInt("seconds", seconds);
         savedInstanceState.putBoolean("running", running);
+        savedInstanceState.putBoolean("wasRunning",wasRunning);
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        wasRunning=running;
+        running = false;
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (wasRunning) {
+            running = wasRunning;
+        }
     }
 
     //Start the stopwatch running when the Start button is clicked.
