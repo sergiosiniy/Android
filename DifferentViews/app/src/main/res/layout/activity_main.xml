@@ -3,49 +3,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.sergiosiniy.beeradvicer.AddNewBeer">
+    android:orientation="vertical"
+    tools:context="com.example.sergiosiniy.differentviews.MainActivity">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/send_beer_text"
-        android:textSize="20sp"/>
+        android:text="@string/text_view"
+        android:textSize="14sp"/>
+
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Select beer type:"
-            android:textSize="18sp"
-            android:layout_marginTop="10dp"/>
-        <Spinner
-            android:id="@+id/beer_type_spinner_sendto"
+            android:text="@string/text_view_second"/>
+
+        <ToggleButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:entries="@array/beer_types_spinner" />
+            android:textOn="@string/toggle_button_text"
+            android:textOff="@string/toggle_button_text_off"
+            android:checked="true"/>
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/brand_edit_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/brand_hint"
-        android:inputType="text"
-        android:maxLines="1"/>
-    <Button
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/send_beer_button"
-        android:drawableTop="@drawable/post_pidgeon"
-        android:layout_gravity="center"
-        android:onClick="sendMessage"/>
-   
+        android:text="@string/box_one"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/checkbox_two"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/checkbox_three"/>
 </LinearLayout>

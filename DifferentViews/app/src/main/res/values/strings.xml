@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">DifferentViews</string>
+    <string name="text_view">Thanks for choosing our awesome blend tea.
+    How do you want it serving?</string>
+    <string name="text_view_second">Temperature</string>
+    <string name="toggle_button_text">HOT</string>
+    <string name="toggle_button_text_off">COLD</string>
+    <string name="box_one">Milk</string>
+    <string name="checkbox_two">Sugar</string>
+    <string name="checkbox_three">Lemon</string>
+</resources>

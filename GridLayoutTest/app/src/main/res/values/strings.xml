@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GridLayoutTest</string>
+    <string name="to">To</string>
+    <string name="to_hint">Enter email address</string>
+    <string name="message">Message</string>
+    <string name="send">Send</string>
+    <string name="cavemen">cavemen</string>
+    <string name="astronauts">astronauts</string>
+</resources>
