@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.sergiosiniy.beeradvicer">
+    package="com.example.sergiosiniy.starbuzzapp">
 
     <application
         android:allowBackup="true"
@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StartScreen">
+        <activity android:name=".TopLevelActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -16,12 +16,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FindBeerActivity"
-            android:label="@string/title_activity_find_beer" />
-        <activity
-            android:name=".AddNewBeer"
-            android:label="@string/title_activity_add_beer" />
-        <activity android:name=".BrandsActivity"></activity>
+            android:name=".DrinkCategoryActivity"
+            android:label="@string/drink_cat_act" />
+        <activity android:name=".DrinkActivity"
+            android:label="Drink"></activity>
     </application>
 
 </manifest>
