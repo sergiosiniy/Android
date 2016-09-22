@@ -18,8 +18,12 @@
         <activity
             android:name=".DrinkCategoryActivity"
             android:label="@string/drink_cat_act" />
-        <activity android:name=".DrinkActivity"
-            android:label="Drink"></activity>
+        <activity
+            android:name=".DrinkActivity"
+            android:label="Drink" />
+        <activity android:name=".FoodCategoryActivity"></activity>
+        <activity android:name=".FoodActivity"
+            android:label="Dish"></activity>
     </application>
 
 </manifest>

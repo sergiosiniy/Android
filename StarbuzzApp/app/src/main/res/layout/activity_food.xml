@@ -4,18 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.sergiosiniy.starbuzzapp.DrinkActivity">
->
+    tools:context="com.example.sergiosiniy.starbuzzapp.FoodActivity">
+    >
     <ImageView
-        android:id="@+id/drink_photo"
+        android:id="@+id/food_photo"
         android:layout_width="190dp"
         android:layout_height="190dp" />
     <TextView
-        android:id="@+id/drink_name"
+        android:id="@+id/food_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <TextView
-        android:id="@+id/drink_description"
+        android:id="@+id/food_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </LinearLayout>

@@ -16,10 +16,18 @@ public class TopLevelActivity extends AppCompatActivity {
         AdapterView.OnItemClickListener listViewListener = new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> listView, View itemView, int position, long id) {
-                if (position == 0) {
-                    Intent intent = new Intent(TopLevelActivity.this, DrinkCategoryActivity.class);
-                    startActivity(intent);
+
+                switch(position){
+                    case 0:
+                        Intent drinkStart = new Intent(TopLevelActivity.this, DrinkCategoryActivity.class);
+                        startActivity(drinkStart);
+                        break;
+                    case 1:
+                        Intent foodStart = new Intent(TopLevelActivity.this, FoodCategoryActivity.class);
+                        startActivity(foodStart);
+                        break;
                 }
+
             }
         };
         ListView listView = (ListView) findViewById(R.id.list_options);
