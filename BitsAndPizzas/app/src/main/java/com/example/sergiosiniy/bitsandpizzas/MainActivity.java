@@ -1,5 +1,6 @@
 package com.example.sergiosiniy.bitsandpizzas;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -22,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_create_order:
-//Code to run when the Create Order item is clicked
+                Intent newOrder = new Intent (MainActivity.this, OrderActivity.class);
+                startActivity(newOrder);
                 return true;
             case R.id.action_settings:
 //Code to run when the settings item is clicked
