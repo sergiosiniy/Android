@@ -1,12 +1,13 @@
 package com.example.sergiosiniy.bitsandpizzas;
 
 import android.content.Intent;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ShareActionProvider;
+import android.support.v7.widget.ShareActionProvider;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,8 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
         getMenuInflater().inflate(R.menu.menu_main, menu);
         MenuItem menuItem = menu.findItem(R.id.action_share);
-        shareActionProvider = (ShareActionProvider) menuItem.getActionProvider();
+        shareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(menuItem);
         setIntent("This is example text");
+
         return super.onCreateOptionsMenu(menu);
 
     }
