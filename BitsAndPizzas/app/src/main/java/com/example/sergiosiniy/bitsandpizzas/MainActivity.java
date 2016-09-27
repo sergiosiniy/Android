@@ -2,6 +2,7 @@ package com.example.sergiosiniy.bitsandpizzas;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.support.v4.app.ShareCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,6 +35,14 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.action_settings:
 //Code to run when the settings item is clicked
+                return true;
+            case R.id.action_share:
+                ShareCompat.IntentBuilder
+                        .from(this) // getActivity() or activity field if within Fragment
+                        .setText("Test piece of text")
+                        .setType("text/plain") // most general text sharing MIME type
+                        .setChooserTitle(getResources().getString(R.string.action_share))
+                        .startChooser();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
