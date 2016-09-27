@@ -16,7 +16,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".OrderActivity"
-            android:label="Order Activity"></activity>
+            android:label="Order Activity"
+            android:parentActivityName=".MainActivity">
+
+        </activity>
     </application>
 
 </manifest>

@@ -11,10 +11,5 @@
         android:orderInCategory="100"
         app:showAsAction="ifRoom"
         android:icon="@mipmap/ic_add_shopping_cart_black_24dp"/>
-    <item android:id="@+id/action_share"
-        android:title="@string/action_share"
-        android:actionProviderClass="android.widget.ShareActionProvider"
-        android:orderInCategory="2"
-        app:showAsAction="ifRoom"
-        android:icon="@mipmap/ic_add_shopping_cart_black_24dp"/>
+
 </menu>
