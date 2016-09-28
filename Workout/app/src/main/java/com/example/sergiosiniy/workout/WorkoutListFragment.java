@@ -3,6 +3,7 @@ package com.example.sergiosiniy.workout;
 
 import android.app.Activity;
 import android.app.ListFragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -25,6 +26,7 @@ public class WorkoutListFragment extends ListFragment {
     static interface WorkoutListListener {
         void itemClicked(long id);
     };
+
     private WorkoutListListener listener;
 
 
@@ -46,9 +48,9 @@ public class WorkoutListFragment extends ListFragment {
     }
 
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        this.listener = (WorkoutListListener)activity;
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.listener = (WorkoutListListener)context;
     }
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {

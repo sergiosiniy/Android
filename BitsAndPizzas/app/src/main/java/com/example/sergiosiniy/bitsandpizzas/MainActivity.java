@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(newOrder);
                 return true;
             case R.id.action_settings:
-//Code to run when the settings item is clicked
+                //Code to run when the settings item is clicked
                 return true;
             case R.id.action_share:
                 ShareCompat.IntentBuilder
