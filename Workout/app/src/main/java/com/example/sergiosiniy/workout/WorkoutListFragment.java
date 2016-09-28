@@ -29,16 +29,10 @@ public class WorkoutListFragment extends ListFragment {
 
     private WorkoutListListener listener;
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-
-        /*String[] names = new String[Workout.workouts.length];
-        for (int i = 0; i < names.length; i++) {
-            names[i] = Workout.workouts[i].getName();
-        }*/
         ArrayAdapter<Workout> adapter = new ArrayAdapter<Workout>(
                 inflater.getContext(), android.R.layout.simple_list_item_1,
                 Workout.workouts);
@@ -51,6 +45,7 @@ public class WorkoutListFragment extends ListFragment {
         super.onAttach(context);
         this.listener = (WorkoutListListener)context;
     }
+
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         if (listener != null) {
