@@ -6,7 +6,6 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity implements WorkoutListFragment.WorkoutListListener{
 
-    WorkoutDetailFragment detailFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,9 +18,9 @@ public class MainActivity extends AppCompatActivity implements WorkoutListFragme
         WorkoutDetailFragment detailsFragment = new WorkoutDetailFragment();
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         detailsFragment.setWorkoutID(id);
+        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         ft.replace(R.id.fragment_container, detailsFragment);
         ft.addToBackStack(null);
-        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         ft.commit();
     }
 
