@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity implements WorkoutListFragment.WorkoutListListener{
 
+    WorkoutDetailFragment detailFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -13,7 +15,8 @@ public class MainActivity extends AppCompatActivity implements WorkoutListFragme
 
     @Override
     public void itemClicked(long id) {
-        new WorkoutDetailFragment().setWorkoutID(id);
+       detailFragment = (WorkoutDetailFragment) getFragmentManager().findFragmentById(R.id.detail_frag);
+        detailFragment.setWorkoutID(id);
     }
 
 }
