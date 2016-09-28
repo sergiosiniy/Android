@@ -27,6 +27,12 @@ public class WorkoutListFragment extends ListFragment {
         void itemClicked(long id);
     };
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.listener = (WorkoutListListener)context;
+    }
+
     private WorkoutListListener listener;
 
     @Override
@@ -38,12 +44,6 @@ public class WorkoutListFragment extends ListFragment {
                 Workout.workouts);
         setListAdapter(adapter);
         return super.onCreateView(inflater, container, savedInstanceState);
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        this.listener = (WorkoutListListener)context;
     }
 
     @Override
