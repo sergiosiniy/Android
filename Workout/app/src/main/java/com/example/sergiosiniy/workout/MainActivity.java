@@ -11,6 +11,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         WorkoutDetailFragment frag = (WorkoutDetailFragment)
                 getFragmentManager().findFragmentById(R.id.detail_frag);
-        frag.setWorkout(1);
+        frag.setWorkoutID(1);
     }
 }

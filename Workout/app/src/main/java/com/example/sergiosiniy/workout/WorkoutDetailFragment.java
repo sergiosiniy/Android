@@ -27,7 +27,7 @@ public class WorkoutDetailFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_workout_detail, container, false);
     }
-    public void setWorkout(long id) {
+    public void setWorkoutID(long id) {
         this.workoutId = id;
     }
 

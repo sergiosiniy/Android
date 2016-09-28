@@ -1,15 +1,11 @@
 package com.example.sergiosiniy.bitsandpizzas;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v4.app.ShareCompat;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
 import android.view.Menu;
 import android.view.MenuItem;
-import android.support.v7.widget.ShareActionProvider;
 
 public class MainActivity extends AppCompatActivity {
 
