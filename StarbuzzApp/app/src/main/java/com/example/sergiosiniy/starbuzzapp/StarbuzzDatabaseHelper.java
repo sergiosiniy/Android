@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class StarbuzzDatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "starbuzz"; // the name of our database
-    private static final int DB_VERSION = 1; // the version of the database
+    private static final int DB_VERSION = 2; // the version of the database
 
     StarbuzzDatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -34,6 +34,16 @@ public class StarbuzzDatabaseHelper extends SQLiteOpenHelper {
         drinkValues.put("IMAGE_RESOURCE_ID", resourceId);
         db.insert("DRINK", null, drinkValues);
     }
+    //insert entries to the db
+    private static void insertFood(SQLiteDatabase db, String name,
+                                   String description, int resourceId) {
+        ContentValues foodValues = new ContentValues();
+        foodValues.put("NAME", name);
+        foodValues.put("DESCRIPTION", description);
+        foodValues.put("IMAGE_RESOURCE_ID", resourceId);
+        db.insert("FOOD", null, foodValues);
+    }
+
 
     private void updateMyDatabase(SQLiteDatabase db, int oldVersion, int newVersion) {
         if (oldVersion < 1) {
@@ -45,9 +55,16 @@ public class StarbuzzDatabaseHelper extends SQLiteOpenHelper {
             insertDrink(db, "Cappuccino", "Espresso, hot milk and steamed-milk foam",
                     R.drawable.cappuccino);
             insertDrink(db, "Filter", "Our best drip coffee", R.drawable.filter);
+
         }
-        /*if (oldVersion <2) {
-            db.execSQL("ALTER TABLE DRINK ADD COLUMN FAVORITE NUMERIC;");
-        }*/
+        if (oldVersion <2) {
+            db.execSQL("CREATE TABLE FOOD (_id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                    + "NAME TEXT, "
+                    + "DESCRIPTION TEXT, "
+                    + "IMAGE_RESOURCE_ID INTEGER);");
+            insertFood(db, "Burger","Fast food which will make you die :D",R.drawable.burger);
+            insertFood(db,"Salad", "Healthy food. Good for you at all.", R.drawable.salad);
+            insertFood(db, "Corndog", "Fast food, like a burger.", R.drawable.corndog);
+        }
     }
 }
