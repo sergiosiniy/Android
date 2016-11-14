@@ -31,12 +31,11 @@ public class WorkoutListFragment extends ListFragment {
 
 
     @TargetApi(23)
-    @Override public void onAttach(Context context) {
+    @Override
+    public void onAttach(Context context) {
         //This method avoid to call super.onAttach(context) if I'm not using api 23 or more
-        //if (Build.VERSION.SDK_INT >= 23) {
         super.onAttach(context);
         onAttachToContext(context);
-        //}
     }
 
     /*
@@ -44,7 +43,8 @@ public class WorkoutListFragment extends ListFragment {
      * Use onAttachToContext instead
      */
     @SuppressWarnings("deprecation")
-    @Override public void onAttach(Activity activity) {
+    @Override
+    public void onAttach(Activity activity) {
         super.onAttach(activity);
         if (Build.VERSION.SDK_INT < 23) {
             onAttachToContext(activity);

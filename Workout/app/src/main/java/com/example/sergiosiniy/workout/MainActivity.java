@@ -34,5 +34,4 @@ public class MainActivity extends AppCompatActivity implements WorkoutListFragme
             startActivity(openDetAct);
         }
     }
-
 }
