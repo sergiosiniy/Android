@@ -1,7 +1,7 @@
 package com.example.sergiosiniy.starbuzzapp;
 
 import android.app.ListActivity;
-import android.widget.CursorAdapter;
+import android.support.v4.widget.CursorAdapter;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
 public class FoodCategoryActivity extends ListActivity {
