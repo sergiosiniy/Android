@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class StarbuzzDatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "starbuzz"; // the name of our database
-    private static final int DB_VERSION = 2; // the version of the database
+    private static final int DB_VERSION = 3; // the version of the database
 
     StarbuzzDatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -65,6 +65,10 @@ public class StarbuzzDatabaseHelper extends SQLiteOpenHelper {
             insertFood(db, "Burger","Fast food which will make you die :D",R.drawable.burger);
             insertFood(db,"Salad", "Healthy food. Good for you at all.", R.drawable.salad);
             insertFood(db, "Corndog", "Fast food, like a burger.", R.drawable.corndog);
+        }
+        if (oldVersion < newVersion){
+            db.execSQL("ALTER TABLE DRINK ADD COLUMN FAVORITE NUMERIC");
+            db.execSQL("ALTER TABLE FOOD ADD COLUMN FAVORITE NUMERIC");
         }
     }
 }
