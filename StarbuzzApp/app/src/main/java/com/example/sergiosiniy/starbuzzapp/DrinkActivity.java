@@ -30,18 +30,18 @@ public class DrinkActivity extends AppCompatActivity {
             //get reference of the sqlite db
             SQLiteDatabase db = starbuzzDatabaseHelper.getReadableDatabase();
             //create the cursor with db entries
-            Cursor cursor = db.query("DRINK",
+            Cursor selectedItemCursor = db.query("DRINK",
                     new String[]{"NAME", "DESCRIPTION", "IMAGE_RESOURCE_ID", "FAVORITE"},
                     "_id = ?",
                     new String[]{Integer.toString(drinkNo)},
                     null, null, null);
             //Move to the first record in the Cursor
-            if (cursor.moveToFirst()) {
+            if (selectedItemCursor.moveToFirst()) {
                 //Get the drink details from the cursor
-                String nameText = cursor.getString(0);
-                String descriptionText = cursor.getString(1);
-                int photoId = cursor.getInt(2);
-                boolean isFavorite = (cursor.getInt(3)==1);
+                String nameText = selectedItemCursor.getString(0);
+                String descriptionText = selectedItemCursor.getString(1);
+                int photoId = selectedItemCursor.getInt(2);
+                boolean isFavorite = (selectedItemCursor.getInt(3)==1);
 
                 //Populate the drink image
                 ImageView photo = (ImageView) findViewById(R.id.drink_photo);
@@ -61,7 +61,7 @@ public class DrinkActivity extends AppCompatActivity {
                 favorite.setChecked(isFavorite);
             }
             //release resources
-            cursor.close();
+            selectedItemCursor.close();
             db.close();
         } catch (SQLiteException e) {
             Toast toast = Toast.makeText(this, "Database unavailable", Toast.LENGTH_SHORT);
@@ -83,6 +83,7 @@ public class DrinkActivity extends AppCompatActivity {
                     drinkValues,
                     "_id = ?",
                     new String[]{Integer.toString(drinkNo)});
+            db.close();
         }catch (SQLiteException e){
             Toast.makeText(this,"SQLite DB is unavailable!",Toast.LENGTH_SHORT).show();
         }
