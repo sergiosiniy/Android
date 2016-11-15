@@ -17,7 +17,6 @@ import static android.support.v7.appcompat.R.styleable.View;
 
 public class FoodActivity extends AppCompatActivity {
     public static final String EXTRA_FOODNO = "foodNo";
-    private int foodNo = getIntent().getIntExtra(EXTRA_FOODNO, 0);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +27,7 @@ public class FoodActivity extends AppCompatActivity {
 
 
         try {
+            int foodNo = getIntent().getIntExtra(EXTRA_FOODNO, 0);
             SQLiteOpenHelper starbuzzDbHelper = new StarbuzzDatabaseHelper(this);
             SQLiteDatabase db = starbuzzDbHelper.getReadableDatabase();
             Cursor cursor = db.query("FOOD",
@@ -63,6 +63,7 @@ public class FoodActivity extends AppCompatActivity {
     }
 
     public void onFavoriteClicked(View view) {
+        int foodNo = getIntent().getIntExtra(EXTRA_FOODNO, 0);
         CheckBox favorite = (CheckBox) findViewById(R.id.favorite_food);
 
         ContentValues foodValues = new ContentValues();

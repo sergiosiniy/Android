@@ -17,7 +17,8 @@ import android.widget.Toast;
 public class TopLevelActivity extends AppCompatActivity {
 
     private SQLiteDatabase db;
-    private Cursor favoritesCursor;
+    private Cursor favoriteDrinksCursor;
+    private Cursor favoriteFoodsCursor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,27 +45,46 @@ public class TopLevelActivity extends AppCompatActivity {
         listView.setOnItemClickListener(listViewListener);
 
         //Populate the list_favorites ListView from a cursor
-        ListView listFavorites = (ListView)findViewById(R.id.list_favorites);
+        ListView listFavoriteDrinks = (ListView)findViewById(R.id.list_favorite_drinks);
+        ListView listFavoriteFoods = (ListView)findViewById(R.id.list_favorite_foods);
+
+
         try{
             SQLiteOpenHelper starbuzzDatabaseHelper = new StarbuzzDatabaseHelper(this);
             db = starbuzzDatabaseHelper.getReadableDatabase();
-            favoritesCursor = db.query("DRINK",
+
+            //Set adapter for favorite drinks list
+            favoriteDrinksCursor = db.query("DRINK",
                     new String[] { "_id", "NAME"},
                     "FAVORITE = 1",
                     null, null, null, null);
-            CursorAdapter favoriteAdapter =
+            CursorAdapter favoriteDrinksAdapter =
                     new SimpleCursorAdapter(TopLevelActivity.this,
                             android.R.layout.simple_list_item_1,
-                            favoritesCursor,
+                            favoriteDrinksCursor,
                             new String[]{"NAME"},
                             new int[]{android.R.id.text1}, 0);
-            listFavorites.setAdapter(favoriteAdapter);
+            listFavoriteDrinks.setAdapter(favoriteDrinksAdapter);
+
+            //Set adapter for favorite foods list
+            favoriteFoodsCursor = db.query("FOOD",
+                    new String[] { "_id", "NAME"},
+                    "FAVORITE = 1",
+                    null, null, null, null);
+            CursorAdapter favoriteFoodsAdapter =
+                    new SimpleCursorAdapter(TopLevelActivity.this,
+                            android.R.layout.simple_list_item_1,
+                            favoriteFoodsCursor,
+                            new String[]{"NAME"},
+                            new int[]{android.R.id.text1}, 0);
+            listFavoriteFoods.setAdapter(favoriteFoodsAdapter);
+
         } catch(SQLiteException e) {
             Toast toast = Toast.makeText(this, "Database unavailable", Toast.LENGTH_SHORT);
             toast.show();
         }
-//Navigate to DrinkActivity if a drink is clicked
-        listFavorites.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        //Navigate to DrinkActivity if a drink is clicked
+        listFavoriteDrinks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> listView, View v, int position, long id)
             {
@@ -73,21 +93,51 @@ public class TopLevelActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        //Navigate to FoodActivity if a food is clicked
+        listFavoriteFoods.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> listView, View v, int position, long id)
+            {
+                Intent intent = new Intent(TopLevelActivity.this, FoodActivity.class);
+                intent.putExtra(FoodActivity.EXTRA_FOODNO, (int)id);
+                startActivity(intent);
+            }
+        });
     }
 
+    /**
+     * We use onCreate() method to initialize our favorite lists when activity was created
+     * and started.
+     * But when activity is paused or stopped it doesn't refreshes the favorite lists after resuming
+     * because it is not destroyed and onCreate() method is not called.
+     * So we need do that in this method for updating our favorite lists using DB changes.
+     */
     public void onRestart() {
         super.onRestart();
         try{
             StarbuzzDatabaseHelper starbuzzDatabaseHelper = new StarbuzzDatabaseHelper(this);
             db = starbuzzDatabaseHelper.getReadableDatabase();
-            Cursor newCursor = db.query("DRINK",
+
+            //refresh Drinks favorite list
+            Cursor drinkCursor = db.query("DRINK",
                     new String[] { "_id", "NAME"},
                     "FAVORITE = 1",
                     null, null, null, null);
-            ListView listFavorites = (ListView)findViewById(R.id.list_favorites);
-            CursorAdapter adapter = (CursorAdapter) listFavorites.getAdapter();
-            adapter.changeCursor(newCursor);
-            favoritesCursor = newCursor;
+            ListView listFavoriteDrinks = (ListView)findViewById(R.id.list_favorite_drinks);
+            CursorAdapter adapterDrinks = (CursorAdapter) listFavoriteDrinks.getAdapter();
+            adapterDrinks.changeCursor(drinkCursor);
+            favoriteDrinksCursor = drinkCursor;
+
+            //refresh Foods favorite list
+            Cursor foodCursor = db.query("FOOD",
+                    new String[] { "_id", "NAME"},
+                    "FAVORITE = 1",
+                    null, null, null, null);
+            ListView listFavoriteFoods = (ListView)findViewById(R.id.list_favorite_foods);
+            CursorAdapter adapterFoods = (CursorAdapter) listFavoriteFoods.getAdapter();
+            adapterFoods.changeCursor(foodCursor);
+            favoriteFoodsCursor = foodCursor;
+
         } catch(SQLiteException e) {
             Toast toast = Toast.makeText(this, "Database unavailable", Toast.LENGTH_SHORT);
             toast.show();
@@ -98,7 +148,8 @@ public class TopLevelActivity extends AppCompatActivity {
     @Override
     public void onDestroy(){
         super.onDestroy();
-        favoritesCursor.close();
+        favoriteDrinksCursor.close();
+        favoriteFoodsCursor.close();
         db.close();
     }
 }
