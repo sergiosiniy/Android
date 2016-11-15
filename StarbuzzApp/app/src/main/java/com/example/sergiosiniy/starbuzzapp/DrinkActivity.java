@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 public class DrinkActivity extends AppCompatActivity {
     public static final String EXTRA_DRINKNO = "drinkNo";
+    int drinkNo = getIntent().getIntExtra(EXTRA_DRINKNO,0);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +24,7 @@ public class DrinkActivity extends AppCompatActivity {
 
         //Get a drink from the intent
         try {
-            int drinkNo = getIntent().getIntExtra(EXTRA_DRINKNO,0);
+
             //create DBHelper object
             SQLiteOpenHelper starbuzzDatabaseHelper = new StarbuzzDatabaseHelper(this);
             //get reference of the sqlite db
@@ -56,7 +57,7 @@ public class DrinkActivity extends AppCompatActivity {
                 description.setText(descriptionText);
 
                 //Populate the favorite value
-                CheckBox favorite = (CheckBox) findViewById(R.id.favorite);
+                CheckBox favorite = (CheckBox) findViewById(R.id.favorite_drink);
                 favorite.setChecked(isFavorite);
             }
             //release resources
@@ -68,8 +69,7 @@ public class DrinkActivity extends AppCompatActivity {
         }
     }
     public void onFavoriteClicked(View view){
-        int drinkNo = getIntent().getIntExtra(EXTRA_DRINKNO,0);
-        CheckBox favorite = (CheckBox) findViewById(R.id.favorite);
+        CheckBox favorite = (CheckBox) findViewById(R.id.favorite_drink);
 
         ContentValues drinkValues = new ContentValues();
         drinkValues.put("FAVORITE",favorite.isChecked());
