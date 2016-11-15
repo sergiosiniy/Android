@@ -39,7 +39,7 @@
         android:layout_below="@id/favorites_list"
         android:layout_alignParentRight="true"
         android:layout_height="wrap_content"
-        android:text="@string/drink_cat_act"/>
+        android:text="@string/food_cat_act"/>
 
     <TextView
         android:id="@+id/favorite_food_textview"
@@ -47,19 +47,22 @@
         android:layout_below="@id/favorites_list"
         android:layout_alignParentLeft="true"
         android:layout_height="wrap_content"
-        android:text="@string/food_cat_act"/>
+        android:text="@string/drink_cat_act"/>
+
  <LinearLayout
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
      android:orientation="horizontal"
      android:layout_below="@id/favorite_drink_textview"
      android:baselineAligned="false">
+
   <ListView
       android:id="@+id/list_favorite_drinks"
       android:layout_width="0dp"
       android:layout_weight="1"
       android:layout_height="wrap_content"
       android:layout_margin="1dp"/>
+
   <ListView
       android:id="@+id/list_favorite_foods"
       android:layout_width="0dp"
