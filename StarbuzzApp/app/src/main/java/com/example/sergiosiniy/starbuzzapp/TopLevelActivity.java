@@ -126,6 +126,7 @@ public class TopLevelActivity extends AppCompatActivity {
             ListView listFavoriteDrinks = (ListView)findViewById(R.id.list_favorite_drinks);
             CursorAdapter adapterDrinks = (CursorAdapter) listFavoriteDrinks.getAdapter();
             adapterDrinks.changeCursor(drinkCursor);
+            favoriteDrinksCursor.close();
             favoriteDrinksCursor = drinkCursor;
 
             //refresh Foods favorite list
@@ -136,6 +137,7 @@ public class TopLevelActivity extends AppCompatActivity {
             ListView listFavoriteFoods = (ListView)findViewById(R.id.list_favorite_foods);
             CursorAdapter adapterFoods = (CursorAdapter) listFavoriteFoods.getAdapter();
             adapterFoods.changeCursor(foodCursor);
+            favoriteFoodsCursor.close();
             favoriteFoodsCursor = foodCursor;
 
         } catch(SQLiteException e) {
