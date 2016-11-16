@@ -49,7 +49,7 @@ public class FoodActivity extends AppCompatActivity {
                 description.setText(selectedItemCursor.getString(1));
 
                 //Populate checkbox
-                CheckBox favorite = (CheckBox) findViewById(R.id.favorite_food);
+                CheckBox favorite = (CheckBox) findViewById(R.id.favorite_food_checkbox);
                 favorite.setChecked(isFavorite);
             }
             //release resources
@@ -62,7 +62,7 @@ public class FoodActivity extends AppCompatActivity {
 
     public void onFavoriteClicked(View view) {
         int foodNo = getIntent().getIntExtra(EXTRA_FOODNO, 0);
-        CheckBox favorite = (CheckBox) findViewById(R.id.favorite_food);
+        CheckBox favorite = (CheckBox) findViewById(R.id.favorite_food_checkbox);
 
         ContentValues foodValues = new ContentValues();
         foodValues.put("FAVORITE",favorite.isChecked());
