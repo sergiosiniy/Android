@@ -34,19 +34,22 @@ public class FoodActivity extends AppCompatActivity {
                     null, null, null);
 
             if (selectedItemCursor.moveToFirst()) {
+                String foodName = selectedItemCursor.getString(0);
+                String foodDescr = selectedItemCursor.getString(1);
+                int imgRes = selectedItemCursor.getInt(2);
                 boolean isFavorite = (selectedItemCursor.getInt(3) == 1);
                 //Populate the drink image
                 ImageView photo = (ImageView) findViewById(R.id.food_photo);
-                photo.setImageResource(selectedItemCursor.getInt(2));
-                photo.setContentDescription(selectedItemCursor.getString(0));
+                photo.setImageResource(imgRes);
+                photo.setContentDescription(foodName);
 
                 //Populate the drink name
                 TextView name = (TextView) findViewById(R.id.food_name);
-                name.setText(selectedItemCursor.getString(0));
+                name.setText(foodName);
 
                 //Populate the drink description
                 TextView description = (TextView) findViewById(R.id.food_description);
-                description.setText(selectedItemCursor.getString(1));
+                description.setText(foodDescr);
 
                 //Populate checkbox
                 CheckBox favorite = (CheckBox) findViewById(R.id.favorite_food_checkbox);
