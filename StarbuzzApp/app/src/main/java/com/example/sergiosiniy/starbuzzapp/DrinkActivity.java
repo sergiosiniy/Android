@@ -1,14 +1,13 @@
 package com.example.sergiosiniy.starbuzzapp;
 
 import android.content.ContentValues;
-import android.content.SearchRecentSuggestionsProvider;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ImageView;
@@ -89,7 +88,7 @@ public class DrinkActivity extends AppCompatActivity {
                         "_id = ?",
                         new String[]{Integer.toString(drinks[0])},
                         null,null,null);
-                db.close();
+
                 return true;
             }catch (SQLiteException e){
                 return false;
@@ -101,12 +100,11 @@ public class DrinkActivity extends AppCompatActivity {
             if(!result){
                 Toast.makeText(DrinkActivity.this, "No DB connection!",Toast.LENGTH_SHORT).show();
             }else{
-                String nameText = selectedItemCursor.getString(0);
-                String descriptionText = selectedItemCursor.getString(1);
-                int photoId = selectedItemCursor.getInt(2);
-                boolean isFavorite = (selectedItemCursor.getInt(3) == 1);
-
                 if(selectedItemCursor.moveToFirst()){
+                    String nameText = selectedItemCursor.getString(0);
+                    String descriptionText = selectedItemCursor.getString(1);
+                    int photoId = selectedItemCursor.getInt(2);
+                    boolean isFavorite = (selectedItemCursor.getInt(3) == 1);
                     //Populate the drink image
                     ImageView photo = (ImageView) findViewById(R.id.drink_photo);
                     photo.setImageResource(photoId);
@@ -123,9 +121,11 @@ public class DrinkActivity extends AppCompatActivity {
                     //Populate the favorite value
                     CheckBox favorite = (CheckBox) findViewById(R.id.favorite_drink_checkbox);
                     favorite.setChecked(isFavorite);
-                    selectedItemCursor.close();
+
                 }
             }
+            selectedItemCursor.close();
+            db.close();
         }
     }
 
